@@ -1,0 +1,56 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    background: #0d0f14;
+    overflow: hidden;
+    position: relative;
+}
+
+.layout-content {
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+    overflow: auto;
+}
+
+.layout-mobile-topbar {
+    display: none;
+}
+
+.layout-menu-btn {
+    border: 1px solid #1e2333;
+    background: #151820;
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.layout-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    padding: 0;
+    z-index: 35;
+}
+
+@media (max-width: 1024px) {
+    .layout-content {
+        padding: 20px;
+    }
+
+    .layout-mobile-topbar {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .layout-content {
+        padding: 14px;
+    }
+}
