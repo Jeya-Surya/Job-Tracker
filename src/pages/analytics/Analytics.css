@@ -1,0 +1,271 @@
+.analytics-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+.page-subtitle {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* Metric Cards */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.metric-card {
+    background: #151820;
+    border: 1px solid #1e2333;
+    border-radius: 16px;
+    padding: 20px 24px;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+}
+
+.metric-value {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 13px;
+    color: #e2e8f0;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.metric-sub {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Charts */
+.charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.charts-scroll {
+    width: 100%;
+}
+
+.chart-card {
+    background: #151820;
+    border: 1px solid #1e2333;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.chart-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.chart-subtitle {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.empty-chart {
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* Funnel */
+.funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.funnel-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 80px;
+    align-items: center;
+    gap: 16px;
+}
+
+.funnel-label {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 600;
+    text-align: right;
+}
+
+.funnel-bar-wrap {
+    background: #1e2333;
+    border-radius: 6px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.funnel-bar {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.8s ease;
+}
+
+.funnel-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.funnel-pct {
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* Summary Grid */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.summary-card {
+    background: #151820;
+    border: 1px solid #1e2333;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+}
+
+.summary-value {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.summary-label {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* Loading */
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    gap: 16px;
+    color: #64748b;
+}
+
+.loader {
+    width: 36px;
+    height: 36px;
+    border: 3px solid #1e2333;
+    border-top-color: #4f9cf9;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-msg {
+    color: #f96060;
+    background: #f9606015;
+    border: 1px solid #f9606030;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+}
+
+@media (max-width: 1200px) {
+    .metrics-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1024px) {
+    .charts-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .charts-row {
+        min-width: 860px;
+    }
+
+    .funnel-row {
+        grid-template-columns: 100px 1fr 72px;
+        gap: 12px;
+    }
+
+    .funnel-label {
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .analytics-page {
+        gap: 16px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .metrics-row {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-row {
+        min-width: 720px;
+    }
+
+    .chart-card {
+        padding: 18px;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

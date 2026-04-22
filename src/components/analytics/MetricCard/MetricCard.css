@@ -1,0 +1,25 @@
+.analytics-metric-card {
+    background: #151820;
+    border: 1px solid #1e2333;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.analytics-metric-value {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.analytics-metric-label {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.analytics-metric-sub {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #64748b;
+}
+
